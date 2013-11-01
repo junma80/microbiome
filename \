@@ -1,0 +1,12 @@
+require 'spreadsheet'
+  
+  # create a new book and sheet
+  book = Spreadsheet::Workbook.new
+  samplesheet = book.create_worksheet :name => 'sampleSheet'
+  allsheet =book.create_worksheet :name => 'allSheet'
+  5.times {|j| 5.times {|i| sampleSheet[j,i] = (i+1)*10**j}}
+  
+  
+  # save file
+book.write 'out.xls'
+
